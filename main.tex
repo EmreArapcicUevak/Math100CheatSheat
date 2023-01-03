@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper, 15pt]{article}
 
 \usepackage[margin = 1in]{geometry} % for spacing around
 \usepackage{graphicx} % for including images in your pdfs
@@ -58,7 +58,11 @@
 }
 
 % Custom commands
-
+\newcommand{\importantStar}{
+	\begin{Large}
+		\textcolor{red}{$\filledstar$}
+	\end{Large}
+}
 
 \begin{document}
 	\maketitle
@@ -74,5 +78,38 @@
 	\tableofcontents
 	\pagebreak
 	
-	
+	\section{Logarithms}
+		\subsection{General definition of a logarithm}
+			\noindent Logarithms are inverse function of exponential function meaning that if we want to remove an exponent we can apply an logarithm
+			
+			\begin{equation*}
+				\log_{b}(a) = c \implies b^c = a
+			\end{equation*}
+		
+			\subsubsection{Example}
+				\noindent Lets say that we want to figure out 2 to the power of what number gives us 524288, or in other words $2^x = 524288$. Well we can approach this problem in two ways, the first way is to apply the definition of the logarithm and phase the problem as such $x = \log_{2}(524288)$. Or we can do this by placing the both sides of the equation into logarithms as follows $\log_{2}(2^x) = \log_{2}(524288) \implies x = \log_{2}(524288)$.
+				
+				
+			\subsubsection{Domain}
+				\[\log_{b}(a) = c\]
+				\noindent The logarithm above is valid for the following values:
+				\[a \in (0, +\infty)\]
+				\[b \in (0,1) \cup (1, +\infty)\]
+		\subsection{Logarithm Identities}
+			\noindent These are some essential logarithm identities that can be found in many math books:
+			\begin{enumerate}
+				\item $\ln(a) = \log_{e}(a)$
+				\item $\log(a) = \log_{10}(a)$
+			\end{enumerate}
+		\subsection{Logarithm Rules}
+			\noindent There are a lot of rules that can help us when we are dealing with logarithms, some of these rules are:
+			\begin{enumerate}
+				\item $\log_{b}(1) = 0$
+				\item $\log_{b}(b) = 1$
+				\item $\log_{b}(b^x) = x$
+				\item $\log_{b}(a^c) = c*\log_{b}(a)$
+				\item $\log_{b}(a) + \log_{b}(c) = \log_{b}(a*c)$ \hspace{4mm} \importantStar
+				\item $\log_{b}(a) - \log_{b}(c) = \log_{b}(\frac{a}{c})$ \hspace{4mm} \importantStar
+				\item $\log_{b}(a) = \frac{\log_{c}(a)}{\log_{c}(b)}$ \hspace{4mm} \importantStar
+			\end{enumerate}
 \end{document}
