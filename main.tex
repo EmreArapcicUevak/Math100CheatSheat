@@ -63,6 +63,12 @@
 		\textcolor{red}{$\filledstar$}
 	\end{Large}
 }
+\newcommand{\degC}[1]{
+	$#1^\circ$
+} 
+
+% Custom colors
+\definecolor{customOlive}{RGB}{207, 218, 166}
 
 \begin{document}
 	\maketitle
@@ -112,4 +118,50 @@
 				\item $\log_{b}(a) - \log_{b}(c) = \log_{b}(\frac{a}{c})$ \hspace{4mm} \importantStar
 				\item $\log_{b}(a) = \frac{\log_{c}(a)}{\log_{c}(b)}$ \hspace{4mm} \importantStar
 			\end{enumerate}
+		\pagebreak
+		
+	\section{Trigonometry}
+		\subsection{Converting degrees into radians}
+			\noindent If we mark the angle in degrees as \emph{$\alpha_{deg}$} and angle in radians as \emph{$\alpha_{rad}$}, the conversion goes as follows:
+			\begin{equation*}
+				\alpha_{rad} = \frac{\pi}{180^{\circ}} * \alpha_{deg}
+			\end{equation*}
+		
+		\subsection{Converting radians into degrees}
+			\noindent Same principal as before just our equation is now:
+			\begin{equation*}
+				\alpha_{deg} = \frac{180^{\circ}}{\pi} * \alpha_{rad}
+			\end{equation*}
+		
+		\subsection{General definition of trigonometric functions}
+			\noindent The concept of unit circle helps us to measure the angles of cos, sin and tan directly since the center of the circle is located at the origin and radius is 1. Consider $\theta$  to be an angle then
+			
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width = .6\textwidth]{trigUnitCircle}
+				\caption{Image of a trigonometric unit circle}
+				\label{Fig:Trig Unit Circle}
+			\end{figure}
+		
+		\subsection{Table of trigonometric values}
+			{
+				\centering
+				\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+					\hline \rowcolor{customOlive}
+					$\alpha_{deg}$ & \degC{0} & \degC{30} & \degC{45} & \degC{60} & \degC{90} & \degC{180} & \degC{270} & \degC{360} \\ \hline
+					$\alpha_{rad}$ & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ & $\frac{3\pi}{2}$ & $2\pi$ \\ \hline
+					$\sin(\alpha)$ & 0 & $\frac{1}{2}$ & $\frac{1}{\sqrt{2}}$ & $\frac{\sqrt{3}}{2}$ & 1 & 0 & -1 & 0 \\ \hline
+					$\cos(\alpha)$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{1}{\sqrt{2}}$ & $\frac{1}{2}$  & 0 & -1 & 0 & 1 \\ \hline
+					$\tan(\alpha)$ & 0 & $\frac{1}{\sqrt{3}}$ & 1 & $\sqrt{3}$ & \textcolor{red}{X} & 0 & \textcolor{red}{X} & 0 \\ \hline
+				\end{tabular}
+				\par
+			}
+		\pagebreak
+		
+		\subsection{Trigonometric Identities}
+			\subsubsection{Pythagorean Identities}
+				\begin{itemize}
+					\item $\sin^2(\theta) + \cos^2(\theta) = 1$
+					\item $\tan^2(\theta) + 1 = sec^2(\theta)$
+				\end{itemize}
 \end{document}
