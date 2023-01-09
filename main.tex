@@ -29,9 +29,13 @@
 \usepackage{enumitem} % for better enum lists
 \usepackage{tcolorbox} % for adding colored text boxes
 \usepackage{bm} % Adding bold text to math inputs
+\usepackage{pgfplots} % Used for plotting functions 
 
 % Setting up the default image path
 \graphicspath{{./Images/}}
+
+% Setting up plot tool
+\pgfplotsset{compat = newest}
 
 % Implementing authro details
 \title{Math 100 Cheat Sheet}
@@ -209,4 +213,140 @@
 					\item $\cos(\frac{\theta}{2}) = \pm  \sqrt{\frac{1+\cos(\theta)}{2}}$
 					\item $\tan(\frac{\theta}{2}) = \frac{1-\cos(\theta)}{\sin(\theta)}$
 				\end{itemize}	
+	\section{Quadric Equations}
+		\subsection{Introduction}
+			\noindent Quadric equations are $2^{nd}$ degree polynomials meaning they have the form of:
+			
+			\begin{equation*}
+				a*x^2 + b*x + c
+			\end{equation*}
+
+			\noindent Now that we got that out of the way lets talk about some important variables that decide how our parabola will end up looking.
+
+			\subsubsection{Discriminant}
+				\noindent The discriminant is defined in the following way:
+				
+				\begin{equation*}
+					D = b^2 - 4*a*c
+				\end{equation*}
+
+				\noindent The discriminant together with the constant \emph{a} can tell us about how the function looks like.
+			
+		\subsection{Function Plots}
+			\subsubsection{$D > 0 \land a > 0$}
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -5, ymax = 10,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{x^2 + 3*x + 1};
+							\legend{$x^2 + 3*x + 1$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+				\noindent We can say that the function will have 2 points ($x_{1,2}$) where it's value will be 0 ($y = f(x) \implies y = 0 = f(x_{1,2})$). We can also see that between points $x_1$ and $x_2$ the function is negative and everywhere else it
+				is positive. So we can confirm the following:
+
+				\begin{itemize}	
+					\item $f(x) < 0 \rightarrow x \in (x_1, x_2)$
+					\item $f(x) > \rightarrow  x \in (-\infty, x_1) \bigcup (x_2, +\infty)$
+					\item $f(x) = 0 \rightarrow x = x_{1,2}$
+				\end{itemize}	
+
+				\pagebreak
+
+			\subsubsection{$D > 0 \land a < 0$}	
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -10, ymax = 5,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{-1*x^2 + 3*x + 1};
+							\legend{$-1*x^2 + 3*x + 1$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+				
+				\begin{itemize}	
+					\item $f(x) > 0 \rightarrow x \in (x_1, x_2)$
+					\item $f(x) < 0 \rightarrow  x \in (-\infty, x_1) \bigcup (x_2, +\infty)$
+					\item $f(x) = 0 \rightarrow x = x_{1,2}$
+				\end{itemize}	
+
+				
+			\subsubsection{$D = 0 \land a > 0$}
+
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -5, ymax = 10,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{x^2 + 2*x + 1};
+							\legend{$x^2 + 2*x + 1$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+
+				\noindent Here we can see that when $D = 0$ there is only \emph{one x} for which $y = 0$ and we will call this x $x_1$, and for positive values of a this function is never negative
+
+				\begin{itemize}	
+					\item $f(x) < 0 \rightarrow x \in \emptyset$
+					\item $f(x) > 0 \rightarrow  x \in (-\infty, x_1) \bigcup (x_1, +\infty)$
+					\item $f(x) = 0 \rightarrow x = x_{1}$
+				\end{itemize}	
+				\pagebreak
+
+			\subsubsection{$D = 0 \land a < 0$}
+				
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -10, ymax = 5,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{-1*x^2 + 2*x - 1};
+							\legend{$-1*x^2 + 2*x - 1$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+
+				\begin{itemize}	
+					\item $f(x) > 0 \rightarrow x \in \emptyset$
+					\item $f(x) < 0 \rightarrow  x \in (-\infty, x_1) \bigcup (x_1, +\infty)$
+					\item $f(x) = 0 \rightarrow x = x_{1}$
+				\end{itemize}	
+			\subsubsection{$D < 0 \land a > 0$}
+				
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -5, ymax = 20,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{x^2 + x + 1};
+							\legend{$x^2 + x + 1$}
+    						\end{axis}
+					\end{tikzpicture}
+
+					\noindent In this case we can see that the function is always positive for every values of x.
+
+				\end{center}
+				
+				\begin{itemize}	
+					\item $f(x) > 0 \rightarrow x \in (-\infty, +\infty)$
+					\item $f(x) < 0 \rightarrow  x \in \emptyset$ 
+					\item $f(x) = 0 \rightarrow x \in \emptyset$
+				\end{itemize}
+				\pagebreak
+
+			\subsubsection{$D < 0 \land a < 0$}
+				
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -10, xmax = 10, ymin = -20, ymax = 5,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{-1*x^2 + x - 1};
+							\legend{$-1*x^2 + x - 1$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+
+				\begin{itemize}	
+					\item $f(x) > 0 \rightarrow x \in \emptyset$
+					\item $f(x) < 0 \rightarrow x \in (-\infty, +\infty)$
+					\item $f(x) = 0 \rightarrow x \in \emptyset$
+				\end{itemize}
+
+		\subsection{Finding zero points}
+			\noindent To find the values for x for which $y = 0$ we will simply apply the following formula:
+			\begin{equation*}
+				x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} 
+			\end{equation*}
 \end{document}
