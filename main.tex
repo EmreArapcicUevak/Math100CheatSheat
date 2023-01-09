@@ -349,4 +349,61 @@
 			\begin{equation*}
 				x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} 
 			\end{equation*}
+
+	\section{Equation of lines}
+		\subsection{Introduction}
+			\noindent When we talk about straight lines there are 2 ways we describe them.
+			\begin{enumerate}
+				\item $y = kx + n$
+				\item $y = y_0 + k(x - x_0)$
+			\end{enumerate}
+
+			\noindent $k$ is the slope of the line and can be calculated by taking the difference of change over y with respect to x.
+			\begin{equation}
+				k = \frac{f(x_2) - f(x_1)}{x_2 - x_1} = \frac{\bigtriangledown y}{\bigtriangledown x}
+			\end{equation}
+
+			\noindent $n$ is the Y intercept and it tells us where does the line touch the y axis when $x = 0$ \\
+			\noindent For the 2nd equation $y_0$ is just the y value of a starting points and $x_0$ is the x value of some starting point that we took. Everything else is the same.
+		
+			\subsubsection{example}
+				
+				\begin{center}
+					\begin{tikzpicture}
+    						\begin{axis}[xmin = -5, xmax = 5, ymin = -10, ymax = 10,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+							\addplot[samples = 300, domain = -10:10, thick, smooth, red]{2*x + 3};
+							\addplot[samples = 300, domain = -10:10, thick, smooth, black]{0};
+							\legend{$2*x + 3$}
+    						\end{axis}
+					\end{tikzpicture}
+				\end{center}
+
+				\noindent As we can see from the equation $y = 2*x + 3$ we can tell that our $n = 3$ and our $k = 2$ this means at $x = 0$ the line will touch the y axis at point $A(0,3)$ and for every change in x y doubles, so if x goes from
+				$0 \rightarrow 2$ y will go from $0 + n \rightarrow 4 + n$
+		\subsection{Conditions for paralel lines}
+			\noindent If two lines are paralel that means that their slope $k$ is the same (A.K.A $k_1 = k_2$)
+
+			\begin{center}
+				\begin{tikzpicture}
+    					\begin{axis}[xmin = -5, xmax = 5, ymin = -10, ymax = 10,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+						\addplot[samples = 300, domain = -10:10, thick, smooth, red]{2*x};
+						\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{2*x + 5};
+						\legend{$2x$,$2x + 5$}
+    					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+
+			\pagebreak
+		\subsection{Conditions for perpendicular lines}
+			\noindent For two lines to be perpendicular their slopes must be negative inverses of one another (A.K.A $k_1 = -\frac{1}{k_2}$)
+			
+			\begin{center}
+				\begin{tikzpicture}
+    					\begin{axis}[xmin = -5, xmax = 5, ymin = -10, ymax = 10,grid = both, major grid style = {lightgray}, minor grid style = {lightgray!25}, width = .55\textwidth] 
+						\addplot[samples = 300, domain = -10:10, thick, smooth, red]{2*x};
+						\addplot[samples = 300, domain = -10:10, thick, smooth, blue]{-x/2};
+						\legend{$2*x$, $\frac{-1}{2}*x$}
+    					\end{axis}
+				\end{tikzpicture}
+			\end{center}
 \end{document}
