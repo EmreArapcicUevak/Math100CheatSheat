@@ -122,8 +122,23 @@
 				\item $\log_{b}(a) - \log_{b}(c) = \log_{b}(\frac{a}{c})$ \hspace{4mm} \importantStar
 				\item $\log_{b}(a) = \frac{\log_{c}(a)}{\log_{c}(b)}$ \hspace{4mm} \importantStar
 			\end{enumerate}
-		\pagebreak
-		
+
+		\subsection{Logaritmic inequalities}
+			\noindent When dealing with inequalities we have to take care about the logarithms base, if the logarithms base is between 0 and 1 once we get rid of the logarithm we have to swap the equality sign, for example:
+			\begin{equation*}
+				\log_b(a) \geq \log_b(c)
+			\end{equation*}
+
+			\noindent If $b \in (0,1) \lor 0 < b < 1$ then:
+			\begin{equation*}
+				\log_b(a) \geq \log_b(c) \implies a \leq c
+			\end{equation*}
+
+			\noindent else if $b > 1$
+			\begin{equation*}
+				\log_b(a) \geq \log_b(c) \implies a \geq c
+			\end{equation*}
+			
 	\section{Trigonometry}
 		\subsection{Converting degrees into radians}
 			\noindent If we mark the angle in degrees as \emph{$\alpha_{deg}$} and angle in radians as \emph{$\alpha_{rad}$}, the conversion goes as follows:
@@ -213,6 +228,23 @@
 					\item $\cos(\frac{\theta}{2}) = \pm  \sqrt{\frac{1+\cos(\theta)}{2}}$
 					\item $\tan(\frac{\theta}{2}) = \frac{1-\cos(\theta)}{\sin(\theta)}$
 				\end{itemize}	
+
+		\subsection{Finding the 2nd solution}
+			\noindent If we get asked to find for what values of x is $\sin(x)$ a value that is between -1 and 1 we know in the range from $0 \rightarrow 2\pi$ there are 2 answers. If sin(x) is given to us in the $1^{st}$ quadrant, then the second solution
+			can be found 
+				\[\sin(180^{\circ} - x)\]
+			
+			\noindent And if $\cos(x)$ is given in the same quadrant the second solution can be found by using this equation
+				\[\cos(360^{\circ} - x)\]
+
+			\hline \vspace{3mm}
+
+			\noindent However if you want to find the negative solution but you only have the knows values for the positive values you can do the following. Find the x such that $\sin(x)$ is equal to the value you want to find (if you want to find
+			$-\frac{1}{2}$ you will just take the value for x such that u get $sin(x) = \frac{1}{2}$). Afterwards you will use this equality to find your answer
+				\[\sin(180^{\circ} + x) \lor \sin(360^{\circ} - x)\]
+
+			\noindent And for $\cos(x)$ the equation is
+				\[\cos(180^{\circ} \mp x)\]
 	\section{Quadric Equations}
 		\subsection{Introduction}
 			\noindent Quadric equations are $2^{nd}$ degree polynomials meaning they have the form of:
