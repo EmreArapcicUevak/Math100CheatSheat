@@ -406,4 +406,63 @@
     					\end{axis}
 				\end{tikzpicture}
 			\end{center}
+	\section {Equation of a circle}
+		\subsection{Introduction}
+			\noindent To understand this part we better take a look at what a circle actually is. By definition a circle is a group of points that have the same distance from once center points; meaning that we will first have to take a look at the equation
+			of distance. The equation of distance between two points goes as follows.
+
+			\begin{equation*}
+				d = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+			\end{equation*}
+
+			\noindent If we take $x_2$ and $y_2$ to be the cordinants of the center of the circle and write them as $x_c$ and $y_c$, and if we take $r$ to be the radius we will get the following equation.
+			
+			\begin{equation*}
+				r = \sqrt{(x_1 - x_c)^2 + (y_1 - y_c)^2}
+			\end{equation*}
+
+			\noindent If the center of the circle is at the center of the cordinate system (0,0) then we get the equation.
+			
+			\begin{equation*}
+				r = \sqrt{x^2 + y^2} \implies r^2 = x^2 + y^2
+			\end{equation*}
+
+			\noindent Where $x$ and $y$ are points in the cordinate system.
+	
+		\pagebreak
+		\subsection{Problem solving}
+			\noindent If we have a question that asks us to find a circle that fits points A and B we have to find a point C such that the distance $\overline{AC}$ must be the same as the distance $\overline{BC}$. To do this we can just find the distance
+			$\overline{AB}$ and divide it by 2 to get our radius, but this will lead us to a complicated way to find the solution; so we will find the point in between A and B. To find a point that is between two other points it is as simple as solving the
+			following set of equations.
+
+			\begin{equation*}
+				A(x_1, y_1)
+			\end{equation*}
+			
+			\begin{equation*}
+				B(x_2, y_2)
+			\end{equation*}
+			
+			\begin{equation*}
+				C(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2})
+			\end{equation*}
+
+			\begin{center}
+				\begin{tikzpicture}
+					\draw[lightgray!25] (-1,-1) grid (1,1);
+					\draw (0,0) circle (1);
+					\draw node at (0,.25) {$C$};
+					\draw node at (-1,.25) {$A$};
+					\draw node at (1,.25) {$B$};
+					\draw[green] (-1,0) -- (1,0);
+					\filldraw (0,0) circle (1mm);
+					\filldraw (1,0) circle (1mm);
+					\filldraw (-1,0) circle (1mm);
+				\end{tikzpicture}
+			\end{center}
+			
+			\hline \vspace{3mm}
+			\noindent Another type of problem is when you are given the center of the circle and it's radius and you are suppose to find out if a given point belongs to the circle, but this is simple just plug it into the equation given beforehand and see
+			if the distance between the center and the given point is the same as the radius.
+			
 \end{document}
